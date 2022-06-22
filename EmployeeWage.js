@@ -35,3 +35,27 @@ const Wage_Per_Hours=20;
     console.log("calculate empwage: "+empWage);
 }
 }
+
+//Uc3 using function calculate emp wage
+{
+    const Is_Parttime = 1;
+    const Is_Fulltime = 2;
+    const Wage_Per_Hours=20;
+    function getWorkingHours(empCheck){
+        switch(empCheck)
+        {
+            case Is_Parttime:
+                return Parttime_Hours;
+                
+            case Is_Fulltime:
+                return Fulltime_Hours;
+            default:
+                return 0;
+        }
+    }
+       
+        let empCheck = Math.floor(Math.random()*10)%2;
+        let empHrs = getWorkingHours(empCheck);
+        let empWage = empHrs*Wage_Per_Hours;
+        console.log("Total Hrs: "+empHrs+"calculate empwage: "+empWage);
+    }
