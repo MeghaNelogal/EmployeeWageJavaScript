@@ -42,9 +42,24 @@ const MAX_HRS_IN_MONTH=160;
     {
         totalWorkingDays++;
         let empCheck=Math.floor(Math.random() * 10) % 3;
-        totalEmpHrs += getWorkingHours(empCheck);
+        let empHrs=getWorkingHours(empCheck);
+        totalEmpHrs += empHrs;;
         empDailyWageArr.push(calcDailyWage(empHrs));
     }
     let empWage = calcDailyWage(totalEmpHrs);
     console.log("Total Days: " + totalWorkingDays + "\nTotal Hours: " + totalEmpHrs +"\nEmployee Wage: " + empWage);
+
+    let totEmpWage=0;
+    function sum(dailyWage)
+    {
+        totEmpWage += dailyWage;
+    }
+    empDailyWageArr.forEach(sum);
+    console.log("\nTotal Days: " + totalWorkingDays + "\nTotal Hours: " + totalEmpHrs +"\nEmployee Wage: " + totEmpWage);
+
+    function totalWages(totalWage,dailyWage){
+        return totalWage + dailyWage;
+    }
+    console.log("Emp Wage With Reduce: "+empDailyWageArr.reduce(totalWages,0));
+
 }
