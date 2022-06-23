@@ -73,7 +73,7 @@ const MAX_HRS_IN_MONTH=160;
     console.log("\nUC7B - Daily Wage Map");
     console.log(mapDayWithWageArr);
 
-    //UC 7C-Show Days When Full Time Wage of 160 were earned
+    //UC 7C-Show Days When Full Time Wage of 160 Were Earned
     function fulltimeWage(dailyWage) {
         return dailyWage.includes("160");
     }
@@ -81,28 +81,32 @@ const MAX_HRS_IN_MONTH=160;
     console.log("\nUC7C - Daily Wage Filter When Fulltime Wage Earned");
     console.log(fullDayWageArr);
 
-      //UC 7D - Find The First Occurrence When Full Time Wage Was Earned Usinf Find Function 
-      function findFulltimeWage(dailyWage){
+    //UC 7D - Find The First Occurrence When Full Time Wage Was Earned Usinf Find Function 
+    function findFulltimeWage(dailyWage){
         return dailyWage.includes("160");
     }
     console.log("\nUC 7D - First Time Fulltime Wage Was Earned On Day: "+ mapDayWithWageArr.find(findFulltimeWage));
 
-     //UC 7E - Check if Every Element of Fulltime Wage is truely holding Fulltime Wage
-     function isAllFulltimeWage(dailyWage){
+    //UC 7E - Check if Every Element of Fulltime Wage is truely holding Fulltime Wage
+    function isAllFulltimeWage(dailyWage){
         return dailyWage.includes("160");
     }
     console.log("\nUC 7E - Check All Element Have Full Time Wage: "+fullDayWageArr.every(isAllFulltimeWage));
 
-     //UC 7F - Check if there is any Part Time Wage
-     function isAnyPartTimeWage(dailyWage){
+    //UC 7F - Check if there is any Part Time Wage
+    function isAnyPartTimeWage(dailyWage){
         return dailyWage.includes("80");
     }
     console.log("\nUC 7F - Check If Any Part Time Wage: "+mapDayWithWageArr.some(isAnyPartTimeWage));
-    
-      //UC 7G - Find The Number Of Days The Employee Worked
-      function totalDaysWorked(numOfDays,dailyWage){
+
+    //UC 7G - Find The Number Of Days The Employee Worked
+    function totalDaysWorked(numOfDays,dailyWage){
         if(dailyWage > 0) return numOfDays+1;
         return numOfDays;
     }
     console.log("\nUC 7G - Number Of Days Employee Worked: "+empDailyWageArr.reduce(totalDaysWorked, 0));
+
+    //UC 8 - Map Functions
+    let empDailyWageMap=0;
+    console.log("\nUC8 - Employee Wage Map TotalHrs: "+Array.from(empDailyWageMap.Values()).reduce(totalWages,0));
 }
