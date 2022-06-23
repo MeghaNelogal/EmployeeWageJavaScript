@@ -92,4 +92,10 @@ const MAX_HRS_IN_MONTH=160;
         return dailyWage.includes("160");
     }
     console.log("\nUC 7E - Check All Element Have Full Time Wage: "+fullDayWageArr.every(isAllFulltimeWage));
+
+     //UC 7F - Check if there is any Part Time Wage
+     function isAnyPartTimeWage(dailyWage){
+        return dailyWage.includes("80");
+    }
+    console.log("\nUC 7F - Check If Any Part Time Wage: "+mapDayWithWageArr.some(isAnyPartTimeWage));
 }
