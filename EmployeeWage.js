@@ -98,4 +98,11 @@ const MAX_HRS_IN_MONTH=160;
         return dailyWage.includes("80");
     }
     console.log("\nUC 7F - Check If Any Part Time Wage: "+mapDayWithWageArr.some(isAnyPartTimeWage));
+    
+      //UC 7G - Find The Number Of Days The Employee Worked
+      function totalDaysWorked(numOfDays,dailyWage){
+        if(dailyWage > 0) return numOfDays+1;
+        return numOfDays;
+    }
+    console.log("\nUC 7G - Number Of Days Employee Worked: "+empDailyWageArr.reduce(totalDaysWorked, 0));
 }
